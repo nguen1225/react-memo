@@ -25,7 +25,7 @@ ReactDOM.render(
   			<Route exact path="/index" component={MemoIndex} />
   		</Switch>
   	</BrowserRouter>
-  </Provider>
+  </Provider>,
   document.getElementById('root')
 );
 
