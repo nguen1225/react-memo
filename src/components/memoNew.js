@@ -42,4 +42,11 @@ class memoNew extends Component{
 			</form>
 		)
 	}
+
+	const validate = values => {
+		const errors = {};
+		if(!values.title) errors.title = "タイトルを入力してください。";
+		if(!values.memo) errors.memo = "メモを入力してください。";
+		return errors;
+	}
 }
