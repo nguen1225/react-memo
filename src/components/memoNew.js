@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 
 //Local Import
-import { addMemo } from '../actions;'
+import { addMemo } from '../actions';
 
 //新規作成
 class memoNew extends Component{
@@ -33,7 +33,7 @@ class memoNew extends Component{
 					<field label = 'タイトル' name = 'title' type = 'text' component = { this.renderField } />
 				</div>
 				<div>
-					<field label = 'メモ' name = 'memo', type = 'text' component = { this.renderField } />
+					<field label = 'メモ' name = 'memo' type = 'text' component = { this.renderField } />
 				</div>
 				<div>
 					<input type = "submit" value = "追加" disabled = { pristine || submitting || invalid } />
@@ -42,6 +42,7 @@ class memoNew extends Component{
 			</form>
 		)
 	}
+}
 
 	const validate = values => {
 		const errors = {};
@@ -49,4 +50,9 @@ class memoNew extends Component{
 		if(!values.memo) errors.memo = "メモを入力してください。";
 		return errors;
 	}
-}
+
+	const mapDispatchToProps = ({ addMemo });
+
+	export default connect(null, mapDispatchToProps)(
+	reduxForm({validate, form: 'mamoNewForm'})(memoNew)
+	);

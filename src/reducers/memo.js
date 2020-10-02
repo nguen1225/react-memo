@@ -25,14 +25,14 @@ export default (memos = {}, action) => {
 		 		memo : action.params.memo,
 			}
 			return { ...memos,[getUniqueStr()] : insertData};
-		case UPDATE_MEMO
+		case UPDATE_MEMO:
 		 	const updateDate = {
 		 		id : action.id,
 		 		title : action.params.title,
 		 		memo : action.params.memo,
 			}
 			return { ...memos,[updateDate.id] : updateDate};
-		case DELETE_MEMO
+		case DELETE_MEMO:
 			delete memos[action.id];
 			return {...memos}
 		default:
