@@ -30,10 +30,10 @@ class memoNew extends Component{
 		return (
 			<form onSubmit = { handleSubmit(this.onSubmit)}>
 				<div>
-					<field label = 'タイトル' name = 'title' type = 'text' component = { this.renderField } />
+					<Field label = 'タイトル' name = 'title' type = 'text' component = { this.renderField } />
 				</div>
 				<div>
-					<field label = 'メモ' name = 'memo' type = 'text' component = { this.renderField } />
+					<Field label = 'メモ' name = 'memo' type = 'text' component = { this.renderField } />
 				</div>
 				<div>
 					<input type = "submit" value = "追加" disabled = { pristine || submitting || invalid } />
