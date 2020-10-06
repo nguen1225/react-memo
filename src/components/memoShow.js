@@ -26,8 +26,8 @@ class memoShow extends Component {
 
 	onDeleteClick = () => {
 		const { id } = this.props.match.params;
-		this.props.updateMemo(id)
-		this.props.history.push('/')
+		this.props.deleteMemo(id);
+		this.props.history.push('/');
 	}
 
 	onSubmit = (values) => {

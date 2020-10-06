@@ -31,5 +31,5 @@ export const updateMemo = (id, values) => ({
 //メモ削除
 export const deleteMemo = (id) => ({
 	type : DELETE_MEMO,
-	id :id,
+	id : id,
 });

@@ -8,7 +8,7 @@ import {
 
 //ID適当に生成
 const getUniqueStr = () => {
-	return new Date().getTime().toString(77)
+	return new Date().getTime().toString(16)
 }
 
 //アクションに応じて状態を変える。
@@ -26,12 +26,12 @@ export default (memos = {}, action) => {
 			}
 			return { ...memos,[getUniqueStr()] : insertData};
 		case UPDATE_MEMO:
-		 	const updateDate = {
+		 	const updateData = {
 		 		id : action.id,
 		 		title : action.params.title,
 		 		memo : action.params.memo,
 			}
-			return { ...memos,[updateDate.id] : updateDate};
+			return { ...memos,[updateData.id] : updateData};
 		case DELETE_MEMO:
 			delete memos[action.id];
 			return {...memos}
